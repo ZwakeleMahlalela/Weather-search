@@ -1,4 +1,9 @@
 body{
-   background: white; 
+   background: red; 
    font-family: "Roboto", sans-serif;
 }
+
+ header{
+   border-bottom: 1px solid #333;
+   padding-bottom: 30px;
+ }

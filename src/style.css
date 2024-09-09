@@ -4,12 +4,12 @@ body{
 }
 
  header{
-   border-bottom: 1px solid #333;
+   border-bottom: 1px solid #808FBA;
    padding-bottom: 30px;
  }
 
  .weather-app{
-   background:white;
+    background:#808FBA;
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
@@ -68,7 +68,7 @@ body{
    line-height: 24px;
  }
  
- .current-details strong {
+ strong  {
    color: #f65282;
  }
  
@@ -91,7 +91,7 @@ body{
  }
 
  footer {
-   border-top: 1px solid #f9f7fe;
+   border-top: 1px solid #808FBA;
    text-align: center;
    padding-top: 15px;
    color: rgba(39, 33, 66, 0.4);

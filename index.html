@@ -10,15 +10,21 @@
     <div class="weather-app">
     <header>
     <form action="">
-        <input type="text" placeholder="Enter city" required />
-        <input type="submit" >
+        <input type="text" 
+        placeholder="Enter city" 
+        required 
+        class="search-input"
+        />
+        <input type="submit" value="Search" class="search-button"/>
     </form>
 </header>
 <main>
     <div class="current-weather">
-    <h1>Cape town</h1>
-    <p>Monday 14:15, moderate rain
-        <br/> Humidity: 87%, Wind: 7.2km/h</p>
+    <h1 class="current-city" id="current-city"> Cape town</h1>
+    <p class="current-date">Monday 14:15, moderate rain
+        <br/> Humidity: <strong>87%,</strong> Wind:<strong> 7.2km/h</strong>
+
+        </p>
     </div>
         <div class="current-temperature">
         <span class="emoji">☀️</span>

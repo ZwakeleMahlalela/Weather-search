@@ -46,10 +46,6 @@ body{
  a {
    color: #885df1;
  }
-
- .current-temperature {
-   font-size: 48px;
- }
  
  .current-weather {
    display: flex;
@@ -71,23 +67,27 @@ body{
  strong  {
    color: #f65282;
  }
+ .current-temperature {
+  font-size: 48px;
+  display: flex;
+ }
+ 
  
  .emoji {
-   position: relative;
-   top: -8px;
-   font-size: 40px;
-   margin-right: 10px;
+   width: 88px;
  }
  
 .number {
    font-size: 80px;
+   margin-left: 10px;
    font-weight: bold;
+   
+   
  }
  
  .degrees {
+  margin-top: 16px;
    font-size: 28px;
-   position: relative;
-   top: -38px;
  }
 
  footer {

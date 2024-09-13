@@ -52,9 +52,20 @@ searchCity(searchInput.value);
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Cape Town");
+searchCity("Polokwane");
  
-function displayForecast(){
+function getForecast(city){
+    let apiKey = "31e1eca874t10a80f2783b0fo246b8a5";
+    let apiUrl =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+   axios(apiUrl).then(displayForecast);
+    console.log(apiUrl);
+}
+
+getForecast("Polokwane");
+
+function displayForecast(response){
+    console.log(response.data);
+
 let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
 let forecastHtml = "";
 
@@ -77,4 +88,3 @@ let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;}
 
 
-displayForecast();

@@ -53,38 +53,45 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Polokwane");
+
+function formatDay(timeStamp) {
+let date = new Date (timeStamp * 1000);
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[date.getDay()];
+}
  
 function getForecast(city){
     let apiKey = "31e1eca874t10a80f2783b0fo246b8a5";
     let apiUrl =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
    axios(apiUrl).then(displayForecast);
-    console.log(apiUrl);
 }
 
 getForecast("Polokwane");
 
 function displayForecast(response){
-    console.log(response.data);
-
-let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
 let forecastHtml = "";
 
-days.forEach(function (day) {
+response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
 forecastHtml = 
 forecastHtml + 
 `
 <div class="weather-forecast-day">
-<div class="weather-forecast-date">${day}</div>
-<div class="weather-forecast-icon">🌦️</div>
+<div class="weather-forecast-date">${formatDay(day.time)}</div>
+<div class="weather-forecast-icon"> <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+</div>
 <div class="weather-forecast-temperature">
-<div class="weather-forecast-temperature"><strong>25°C</strong></div>
-<div class="weather-forecast-temperature">9°C</div>
+<div class="weather-forecast-temperature"><strong>${Math.round(day.temperature.maximum)}°C</strong></div>
+<div class="weather-forecast-temperature">${Math.round(day.temperature.minimum)}°C</div>
 </div>
 </div>
 `;
+}
 });
 
 let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = forecastHtml;}
+forecastElement.innerHTML = forecastHtml;
+}
 
 
